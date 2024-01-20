@@ -27,6 +27,9 @@ app.get("/simulation", (req, res) => {
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "login.html"));
 });
+app.get("/login-hp", (req, res) => {
+  res.sendFile(path.join(__dirname, "login-hp.html"));
+});
 
 // Register route
 app.get("/register", (req, res) => {
@@ -47,6 +50,18 @@ app.post("/register", async (req, res) => {
     res.status(400).send("Error registering user");
   }
 });
+
+app.post("/login", async(req,res)=>{
+  try {
+    const email = req.body.email;
+    const password = req.body.pass;
+
+    console.log(`The Password is : ${email}`);
+    console.log(`The Password is : ${password}`);
+  } catch (error) {
+    res.status(400).send("Invalid Data")
+  }
+})
 
 //! Start the server
 app.listen(port, () => {

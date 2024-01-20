@@ -75,7 +75,10 @@ function redirectToLogin() {
   window.location.href = "/login";
   return;
 }
-
+function redirectToHPLogin() {
+  window.location.href = "/login-hp";
+  return;
+}
 // Dialog to open
 function openLoginModal() {
   const loginModal = document.getElementById("dialog");
