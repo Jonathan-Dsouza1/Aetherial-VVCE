@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4; /* Optional background color for the body */
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .card {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 200px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form id="userForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="phoneno">Phone Number:</label>
+    <input type="tel" id="phoneno" name="phoneno" placeholder="Enter your phone number" required>
+
+    <label for="bloodgroup">Blood Group:</label>
+    <select id="bloodgroup" name="bloodgroup" required>
+      <option value="" disabled selected>Select your blood group</option>
+      <option value="A+">A+</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="O+">O+</option>
+      <option value="O-">O-</option>
+      <option value="AB+">AB+</option>
+      <option value="AB-">AB-</option>
+    </select>
+
+    <label for="emergencyphoneno">Emergency Phone Number:</label>
+    <input type="tel" id="emergencyphoneno" name="emergencyphoneno" placeholder="Enter emergency phone number" required>
+
+    <label for="profileImage">Profile Image:</label>
+    <input type="file" id="profileImage" name="profileImage" accept="image/*" capture="camera">
+    <button type="button" onclick="captureImage()">Capture Image</button>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <div id="userCard" class="card" style="display: none;">
+    <h2>User Information</h2>
+    <img id="cardImage" src="" alt="User Image">
+    <p><strong>Email:</strong> <span id="cardEmail"></span></p>
+    <p><strong>Name:</strong> <span id="cardName"></span></p>
+    <p><strong>Phone Number:</strong> <span id="cardPhoneno"></span></p>
+    <p><strong>Blood Group:</strong> <span id="cardBloodgroup"></span></p>
+    <p><strong>Emergency Phone Number:</strong> <span id="cardEmergencyPhoneno"></span></p>
+  </div>
+
+  <script type="text/javascript">
+    
+    function captureImage() {
+      const profileImageInput = document.getElementById('profileImage');
+      profileImageInput.click();
+    }
+    
+
+    function submitForm() {
+        const email = document.getElementById('email').value;
+        const name = document.getElementById('name').value;
+        const phoneno = document.getElementById('phoneno').value;
+        const bloodgroup = document.getElementById('bloodgroup').value;
+        const emergencyphoneno = document.getElementById('emergencyphoneno').value;
+        
+        const cardImage = document.getElementById('profileImage').files[0];
+        const cardImageUrl = cardImage ? URL.createObjectURL(cardImage) : '';
+
+        document.getElementById('cardImage').src = cardImageUrl;
+        document.getElementById('cardEmail').textContent = email;
+        document.getElementById('cardName').textContent = name;
+        document.getElementById('cardPhoneno').textContent = phoneno;
+        document.getElementById('cardBloodgroup').textContent = bloodgroup;
+        document.getElementById('cardEmergencyPhoneno').textContent = emergencyphoneno;
+
+        document.getElementById('userCard').style.display = 'block';
+        document.getElementById('userForm').style.display = 'none';
+    }
+    
+  </script>
+
+</body>
+</html>
