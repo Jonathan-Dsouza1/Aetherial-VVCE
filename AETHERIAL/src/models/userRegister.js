@@ -12,7 +12,7 @@ const register = new mongoose.Schema({
     unique: true,
   },
   pass: {
-    type: Array,
+    type: String,
     required: true,
   },
 });
