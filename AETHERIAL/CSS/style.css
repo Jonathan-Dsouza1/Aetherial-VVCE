@@ -1,0 +1,86 @@
+* {
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  scrollbar-color: black;
+  scrollbar-width: thin;
+}
+
+/* scrollbar */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #333; /* Adjust the background color as needed */
+}
+
+/* Header section starts */
+.main {
+    display: flex;
+    min-height: 120vh;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.985)
+      ),
+      url("../Images/helmet.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .head {
+    margin-top: 5em;
+    margin-bottom: 6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .Heading {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    /* padding-top: 1em; */
+    text-align: center;
+    font-size: 4em;
+    letter-spacing: 2px;
+  }
+  
+  .subhead {
+    color: rgb(197, 197, 197);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: solid black;
+    /* text-align: center; */
+  }
+  .subhead1 {
+    color: rgb(19, 19, 19);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: solid black;
+    /* text-align: center; */
+  }
+  .desc {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 2em;
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+  /* Navbars */
